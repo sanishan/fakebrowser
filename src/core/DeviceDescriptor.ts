@@ -1,4 +1,5 @@
 // noinspection JSUnusedGlobalSymbols
+// personal code update
 
 import * as crypto from 'crypto'
 import {strict as assert} from 'assert'
@@ -264,28 +265,28 @@ export default class DeviceDescriptorHelper {
 
             // No plugins and mineType information, remove
             // noinspection RedundantIfStatementJS
-            if (!dd.plugins || !dd.plugins.mimeTypes.length || !dd.plugins.plugins.length) {
-                throw new Error('Plugins of desktop browser cannot be empty')
-            }
+            // if (!dd.plugins || !dd.plugins.mimeTypes.length || !dd.plugins.plugins.length) {
+            //     throw new Error('Plugins of desktop browser cannot be empty')
+            // }
 
-            // Ordinary PC computers should not have touch screens
-            if (dd.navigator.maxTouchPoints != 0) {
-                throw new Error('Desktop browsers cannot have touchscreens')
-            }
+            // // Ordinary PC computers should not have touch screens
+            // if (dd.navigator.maxTouchPoints != 0) {
+            //     throw new Error('Desktop browsers cannot have touchscreens')
+            // }
 
-            // mimeTypes
-            if (!dd.mimeTypes || !dd.mimeTypes.length) {
-                throw new Error('mimeTypes cannot be empty')
-            }
+            // // mimeTypes
+            // if (!dd.mimeTypes || !dd.mimeTypes.length) {
+            //     throw new Error('mimeTypes cannot be empty')
+            // }
 
-            // permissions
-            if (!dd.permissions || Object.keys(dd.permissions).length === 0) {
-                throw new Error('permissions cannot be empty')
-            }
+            // // permissions
+            // if (!dd.permissions || Object.keys(dd.permissions).length === 0) {
+            //     throw new Error('permissions cannot be empty')
+            // }
         } else {
-            if (dd.navigator.maxTouchPoints === 0) {
-                throw new Error('Mobile devices must have touch screen')
-            }
+            // if (dd.navigator.maxTouchPoints === 0) {
+            //     throw new Error('Mobile devices must have touch screen')
+            // }
         }
 
         assert(dd.navigator.userAgent, 'userAgent cannot be empty')
@@ -304,17 +305,17 @@ export default class DeviceDescriptorHelper {
         // }
 
         // Only chrome browser is allowed
-        if (
-            !lowerCaseUserAgent.includes('chrome')
-            && !lowerCaseUserAgent.includes('crios')
-        ) {
-            throw new Error('Only chrome kernel browsers are supported')
-        }
+        // if (
+        //     !lowerCaseUserAgent.includes('chrome')
+        //     && !lowerCaseUserAgent.includes('crios')
+        // ) {
+        //     throw new Error('Only chrome kernel browsers are supported')
+        // }
 
-        // chrome os
-        if (lowerCaseUserAgent.includes('cros')) {
-            throw new Error('ChromeOS is not supported')
-        }
+        // // chrome os
+        // if (lowerCaseUserAgent.includes('cros')) {
+        //     throw new Error('ChromeOS is not supported')
+        // }
 
         // Googlebot
         if (lowerCaseUserAgent.includes('googlebot')) {
@@ -334,9 +335,9 @@ export default class DeviceDescriptorHelper {
         }
 
         // voices
-        if (!dd.voices || !dd.voices.length) {
-            throw new Error('voices cannot be empty')
-        }
+        // if (!dd.voices || !dd.voices.length) {
+        //     throw new Error('voices cannot be empty')
+        // }
 
         return true
     }
