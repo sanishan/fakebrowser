@@ -249,12 +249,12 @@ export default class DeviceDescriptorHelper {
         if (!UserAgentHelper.isMobile(dd.navigator.userAgent)) {
             // If not mobile phone, but screen is too small, filter it out
             if (dd.window.innerWidth < 900 || dd.window.innerHeight < 450) {
-                throw new Error('width and height of windows is too small')
+                // throw new Error('width and height of windows is too small')
             }
 
             // Screen height greater than width, remove it
             if (dd.window.innerHeight > dd.window.innerWidth) {
-                throw new Error('Height of window is greater than width of window, non-normal browser')
+                // throw new Error('Height of window is greater than width of window, non-normal browser')
             }
 
             if (dd.window.innerHeight > dd.screen.availHeight
