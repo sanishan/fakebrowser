@@ -79,7 +79,7 @@ async function waitFor<T>(func: () => T, timeout: number): Promise<T | null> {
 
 function myRealExportIP(): Promise<string> {
     return new Promise<string>((resolve, reject) => {
-        axios.get('https://httpbin.org/ip').then(response => {
+        axios.get('https://ip.bhaiyag.pk').then(response => {
             resolve(response.data.origin)
         }).catch(ex => {
             reject(ex)
